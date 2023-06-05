@@ -36,6 +36,18 @@ body {
     grid-gap: 10px;
 }
 
+.item_clean {
+    border: 1px solid black;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.item_clean_all {
+    border: 1px solid black;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
 .buttons div {
     border: 1px solid black;
     border-radius: 10px;
@@ -48,6 +60,7 @@ body {
 .display div {
     height: 40%;
 }
+
 
 #top_row {
     font-size: 64px;

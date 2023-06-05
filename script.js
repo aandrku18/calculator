@@ -9,6 +9,38 @@ let display_operation = document.querySelector('#operation')
 let operation_buttons = document.querySelectorAll('.operation_button')
 let number_buttons = document.querySelectorAll(".number")
 let equal_button = document.querySelector(('.equal_button'))
+let erase_button = document.querySelector('.item_clean')
+let clean_button_all = document.querySelector('.item_clean_all')
+
+
+number_buttons.forEach(number => {
+    number.addEventListener('click', element => {
+        upgradeNumber(element.target.textContent)
+    })
+})
+
+
+operation_buttons.forEach(operationer => {
+    operationer.addEventListener('click', element => {
+        operation = element.target.textContent
+        display_operation.textContent = operation
+        operation_bool = true
+        if (secondNumber !== '') {
+            calculate()
+        } 
+
+    })
+})
+
+
+equal_button.addEventListener('click', () => {
+    display_operation.textContent = ''
+    operation_bool = false
+    calculate()
+})
+
+clean_button_all.addEventListener('click', () => cleanAll())
+erase_button.addEventListener('click', () => erase())
 
 
 
@@ -26,6 +58,7 @@ function upgradeNumber(number) {
         display_bottom.textContent = secondNumber
     }
 }
+
 
 function calculate() {
     if (operation === '+') {
@@ -63,27 +96,35 @@ function calculate() {
     
 }
 
-number_buttons.forEach(number => {
-    number.addEventListener('click', element => {
-        upgradeNumber(element.target.textContent)
-    })
-})
 
-operation_buttons.forEach(operationer => {
-    operationer.addEventListener('click', element => {
-        operation = element.target.textContent
-        display_operation.textContent = operation
-        operation_bool = true
-        if (secondNumber !== '') {
-            calculate()
-        } 
-
-    })
-})
-
-equal_button.addEventListener('click', () => {
-    display_operation.textContent = ''
+function cleanAll() {
+    firstNumber = ''
+    secondNumber = ''
+    operation = ''
     operation_bool = false
-    calculate()
-})
+    display_top.textContent = '0'
+    display_bottom.textContent = ''
+    display_operation.textContent = ''
+}
+
+function erase() {
+    if (!operation_bool) {
+        let arr = Array.from(firstNumber)
+        arr.pop()
+        firstNumber = arr.join("")
+        if (firstNumber === '') {
+            display_top.textContent = '0'
+        }
+        else {
+            display_top.textContent = firstNumber
+        }
+        
+    }
+    else {
+        let arr2 = Array.from(secondNumber)
+        arr2.pop()
+        secondNumber = arr2.join("")
+        display_bottom.textContent = secondNumber
+    }
+}
 
