@@ -47,12 +47,14 @@ erase_button.addEventListener('click', () => erase())
 function upgradeNumber(number) {
     if (!operation_bool) {
         let arr = Array.from(firstNumber)
+        if (number === '.' && firstNumber.includes('.')) return
         arr.push(number)
         firstNumber = arr.join("")
         display_top.textContent = firstNumber
     }
     else {
         let arr2 = Array.from(secondNumber)
+        if (number === '.' && secondNumber.includes('.')) return
         arr2.push(number)
         secondNumber = arr2.join("")
         display_bottom.textContent = secondNumber
@@ -64,7 +66,7 @@ function calculate() {
     if (operation === '+') {
         let sum = Number(firstNumber) + Number(secondNumber)
         sum = sum.toString()
-        firstNumber = `${sum}`
+        firstNumber = `${Math.round(sum * 10) / 10}`
         secondNumber = ''
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
@@ -72,7 +74,7 @@ function calculate() {
     else if (operation === '-') {
         let sum = Number(firstNumber) - Number(secondNumber)
         sum = sum.toString()
-        firstNumber = `${sum}`
+        firstNumber = `${Math.round(sum * 10) / 10}`
         secondNumber = ''
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
@@ -80,7 +82,7 @@ function calculate() {
     else if (operation === '×') {
         let sum = Number(firstNumber) * Number(secondNumber)
         sum = sum.toString()
-        firstNumber = `${sum}`
+        firstNumber = `${Math.round(sum * 10) / 10}`
         secondNumber = ''
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
@@ -88,7 +90,7 @@ function calculate() {
     else if (operation === '÷') {
         let sum = Number(firstNumber) / Number(secondNumber)
         sum = sum.toString()
-        firstNumber = `${sum}`
+        firstNumber = `${Math.round(sum * 10) / 10}`
         secondNumber = ''
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
