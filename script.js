@@ -33,8 +33,6 @@ function calculate() {
         sum = sum.toString()
         firstNumber = `${sum}`
         secondNumber = ''
-        //operation = ''
-        //display_operation.textContent = operation
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
     }
@@ -43,8 +41,6 @@ function calculate() {
         sum = sum.toString()
         firstNumber = `${sum}`
         secondNumber = ''
-        //operation = ''
-        //display_operation.textContent = operation
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
     }
@@ -53,8 +49,6 @@ function calculate() {
         sum = sum.toString()
         firstNumber = `${sum}`
         secondNumber = ''
-        //operation = ''
-        //display_operation.textContent = operation
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
     }
@@ -63,8 +57,6 @@ function calculate() {
         sum = sum.toString()
         firstNumber = `${sum}`
         secondNumber = ''
-        //operation = ''
-        //display_operation.textContent = operation
         display_bottom.textContent = secondNumber
         display_top.textContent = firstNumber
     }
