@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 100px;
+    background-color: #cfcfd4;
 }
 
 .calculator {
@@ -16,6 +17,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    background-color: #353940;
+    box-shadow: 1px 0px 32px 6px rgba(0,0,0,0.75);
     
 }
 
@@ -25,6 +28,8 @@ body {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+    background-color: #969da8;
+    border-radius: 4px;
     
 }
 
@@ -55,6 +60,9 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 40px;
+    background-color: #202021;
+    color: #ced2d9;
+    box-shadow: 1px 0px 19px -3px rgba(0,0,0,0.75);
 }
 
 .display div {
