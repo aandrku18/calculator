@@ -3,6 +3,8 @@ let secondNumber = ''
 let operation = ''
 let operation_bool = false
 
+
+let body = document.querySelector('body')
 let display_top = document.querySelector('#top_row')
 let display_bottom = document.querySelector('#bottom_row')
 let display_operation = document.querySelector('#operation') 
@@ -23,8 +25,12 @@ buttons.forEach(button => {
     button.addEventListener('mousedown', element => {
         element.target.style['background-color'] = '#34343d'
     })
-    button.addEventListener('mouseup', element => {
-        element.target.style['background-color'] = '#202021'
+    
+})
+
+body.addEventListener('mouseup', () => {
+    buttons.forEach(button => {
+        button.style['background-color'] = '#202021'
     })
 })
 
