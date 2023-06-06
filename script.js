@@ -11,6 +11,22 @@ let number_buttons = document.querySelectorAll(".number")
 let equal_button = document.querySelector(('.equal_button'))
 let erase_button = document.querySelector('.item_clean')
 let clean_button_all = document.querySelector('.item_clean_all')
+let buttons = document.querySelectorAll('.buttons div')
+
+buttons.forEach(button => {
+    button.addEventListener('mousemove', element => {
+        element.target.style['box-shadow'] = '1px 0px 32px -86px rgba(237,234,237,1)'
+    })
+    button.addEventListener('mouseleave', element => {
+        element.target.style['box-shadow'] = '1px 0px 19px -3px rgba(0,0,0,0.75)'
+    })
+    button.addEventListener('mousedown', element => {
+        element.target.style['background-color'] = '#34343d'
+    })
+    button.addEventListener('mouseup', element => {
+        element.target.style['background-color'] = '#202021'
+    })
+})
 
 
 number_buttons.forEach(number => {
