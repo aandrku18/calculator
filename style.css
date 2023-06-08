@@ -9,7 +9,7 @@ body {
 
 .calculator {
     height: min(550px, 100%);
-    width: min(350px, 100%);
+    width: min(350px, 95%);
     border: 1px solid black;
     border-radius: 28px;
     padding: 40px;
